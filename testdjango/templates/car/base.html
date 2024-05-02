@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "car/header.html" %}
+<a href="{% url 'car:add'%}">Add</a>
+{%if info%}
+    <table>
+    {%for s in info%}
+    <tr bgcolor="{% cycle 'yellow' 'brown' %}">
+        <td>{{s.name}}</td>
+    {%endfor%}
+    </table>
+{%endif%}
+</body>
+</html>
